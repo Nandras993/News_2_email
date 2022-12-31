@@ -1,0 +1,7 @@
+{
+  "username": "your email@email.com",
+  "password": "your password",
+
+  "__how_to_use__": "This is a template, insert email in username and a generated password into password.",
+  "--how_to_use_2__":  "After that change the 'path' to 'CONFIG.json' in send_email.py"
+}
