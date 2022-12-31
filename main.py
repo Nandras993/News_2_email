@@ -1,15 +1,20 @@
 import requests
 from send_email import send_email
+import json
 
 topic = "nasa"
 
-api_key = "cee1fae7354e487cb51bd4bb69f3dd42"
+path = "configuration.json"
+with open(path, "r") as handler:
+    info = json.load(handler)
+
+api_key = info["api"]
 url = "https://newsapi.org/v2/everything?" \
       f"q={topic}&" \
       "from=2022-12-30&" \
       "language=en&" \
       "sortBy=publishedAt&" \
-      "apiKey=cee1fae7354e487cb51bd4bb69f3dd42"
+      f"apiKey={api_key}"
 
 # Make a request
 request = requests.get(url)
